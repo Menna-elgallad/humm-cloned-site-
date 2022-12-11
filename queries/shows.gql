@@ -1,0 +1,72 @@
+query Shows($limit: Int) {
+  shows(limit: $limit) {
+    all_episodes_func {
+      count
+    }
+    slug
+    translations {
+      description
+      title
+      cover {
+        id
+      }
+    }
+    all_episodes {
+      slug
+      video
+      id
+      date_created_func {
+        day
+        month
+        year
+      }
+      translations {
+        content
+        title
+        cover {
+          id
+        }
+      }
+      date_created_func {
+        day
+        month
+        year
+      }
+    }
+  }
+}
+
+query eposide($limit: Int, $slug: String) {
+  shows(filter: { slug: { _eq: $slug } }) {
+    slug
+    translations {
+      description
+      title
+      cover {
+        id
+      }
+    }
+    all_episodes(limit: $limit) {
+      slug
+      video
+      id
+      date_created_func {
+        day
+        month
+        year
+      }
+      translations {
+        content
+        title
+        cover {
+          id
+        }
+      }
+      date_created_func {
+        day
+        month
+        year
+      }
+    }
+  }
+}

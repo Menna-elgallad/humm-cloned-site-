@@ -1,0 +1,42 @@
+query getArticles($limit: Int) {
+  Article(limit: $limit, filter: { type: { _eq: "read" } }) {
+    id
+    slug
+    type
+    video
+    press_link
+    date_created
+    date_created_func {
+      day
+      month
+      year
+    }
+    translations {
+      cover {
+        id
+      }
+      title
+      content
+    }
+    category {
+      id
+      slug
+      translations {
+        title
+        cover {
+          id
+        }
+      }
+      user_created {
+        first_name
+        last_name
+      }
+      articles {
+        translations {
+          content
+          title
+        }
+      }
+    }
+  }
+}
