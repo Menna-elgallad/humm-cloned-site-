@@ -1,4 +1,4 @@
-# humm cloned task by Menna Elgallad   
+# Food Blog CMS cloned task by Menna Elgallad   
 ## To install packages use
 use npm run install or yarn install
 ## To run the project 
